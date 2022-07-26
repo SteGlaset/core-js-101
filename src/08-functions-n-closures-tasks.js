@@ -84,7 +84,7 @@ function getPolynom(...args) {
  */
 function memoize(func) {
   const c = {};
-  return function (...args) {
+  return (...args) => {
     const k = JSON.stringify(args);
     if (!Object.prototype.hasOwnProperty.call(c, k)) {
       c[k] = func.apply(this, args);
